@@ -1,4 +1,4 @@
-# OctoPrint-Terminaltoevent
+# OctoPrint-PauseForUserEvent
 
 When "echo:busy: paused for user" is received on the serial port, this plugin then raises a "paused_for_user" event, which may then be used with other plugins like mqtt to alert the user, that the printer is paused and needs attention
 
