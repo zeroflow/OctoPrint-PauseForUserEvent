@@ -56,7 +56,7 @@ class PauseForUserEvent(octoprint.plugin.SettingsPlugin,
         # Found keyword, fire event and block until other text is received
         if "echo:busy: paused for user" in line:
             if not self.triggered:
-                eventManager().fire("paused_for_user")
+                eventManager().fire(Events.PLUGIN_PAUSE_FOR_USER_EVENT_NOTIFY)
                 self.triggered = True
         # Other text, we may fire another event if we encounter "paused for user" again
         else:
@@ -65,7 +65,7 @@ class PauseForUserEvent(octoprint.plugin.SettingsPlugin,
         return line
     
     def register_custom_events(self, *args, **kwargs):
-        return ["paused_for_user"]
+        return ["notify"]
 
 
 # If you want your plugin to be registered within OctoPrint under a different name than what you defined in setup.py
