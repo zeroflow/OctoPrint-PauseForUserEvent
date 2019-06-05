@@ -5,7 +5,7 @@ import octoprint.plugin
 import logging
 from octoprint.events import eventManager, Events
 
-class PauseForUserEvent(octoprint.plugin.SettingsPlugin):
+class pause_for_user_event(octoprint.plugin.SettingsPlugin):
     
     def get_settings_defaults(self):
         return {}
@@ -15,7 +15,7 @@ class PauseForUserEvent(octoprint.plugin.SettingsPlugin):
         # Plugin here. See https://github.com/foosel/OctoPrint/wiki/Plugin:-Software-Update
         # for details.
         return dict(
-            PauseForUserEvent=dict(
+            pause_for_user_event=dict(
                 displayName="PauseForUser Event Plugin",
                 displayVersion=self._plugin_version,
 
@@ -52,11 +52,11 @@ class PauseForUserEvent(octoprint.plugin.SettingsPlugin):
 # If you want your plugin to be registered within OctoPrint under a different name than what you defined in setup.py
 # ("OctoPrint-PluginSkeleton"), you may define that here. Same goes for the other metadata derived from setup.py that
 # can be overwritten via __plugin_xyz__ control properties. See the documentation for that.
-__plugin_name__ = "PauseForUserEvent Plugin"
+__plugin_name__ = "PauseForUser Event Plugin"
 
 def __plugin_load__():
     global __plugin_implementation__
-    __plugin_implementation__ = PauseForUserEvent()
+    __plugin_implementation__ = pause_for_user_event()
 
     global __plugin_hooks__
     __plugin_hooks__ = {
